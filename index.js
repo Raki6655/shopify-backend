@@ -40,6 +40,7 @@ const { urlencoded } = require("express");
 require("dotenv").config();
 
 const app = express();
+mongoose.set("strictQuery", true);
 mongoose
 	.connect(
 		"mongodb+srv://alannpn75:alan@cluster0.xdtj2.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
