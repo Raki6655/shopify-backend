@@ -29,7 +29,7 @@ app.use("/post", require("./route/post"));
 if (process.env.NODE_ENV === "production") {
 	app.use(express.static("client/.next"));
 }
-app.use(cors());
+//
 const port = process.env.PORT || 4000;
 
 app.listen(port, () => console.log(`server running on port ${port}`));
