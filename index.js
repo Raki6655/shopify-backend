@@ -13,10 +13,10 @@ mongoose
 app.use(express.json({ limit: "5mb" }));
 app.use(urlencoded({ extended: true }));
 const corsOptions = {
-	origin: "*", // Allow all origins (you can replace with a specific origin)
-	methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
-	allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
-	credentials: true, // Allow cookies/auth headers
+	origin: ["http://localhost:3000", "https://your-frontend-domain.com"], // Replace with your actual frontend domains
+	methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+	allowedHeaders: ["Content-Type", "Authorization"],
+	credentials: true,
 };
 app.use(cors(corsOptions));
 
