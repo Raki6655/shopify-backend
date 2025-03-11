@@ -17,8 +17,11 @@ app.use(
 		origin: "*",
 	})
 );
-app.use("/api", require("./routes/auth"));
-app.use("/post", require("./routes/post"));
+app.get("/", () => {
+	return `<h1>hello</h1>`;
+});
+app.use("/api", require("./route/auth"));
+app.use("/post", require("./route/post"));
 
 const PORT = 5000;
 
