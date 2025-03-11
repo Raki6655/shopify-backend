@@ -60,7 +60,7 @@ const corsOptions = {
 	credentials: true, // Allow cookies/auth headers
 };
 app.use(cors(corsOptions));
-app.use("/", (req, res) => {
+app.get("/", (req, res) => {
 	res.send("<h1>Hello,Welcome to TweenLab</>");
 });
 
