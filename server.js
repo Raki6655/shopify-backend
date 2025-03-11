@@ -17,12 +17,15 @@ app.use(
 		origin: "*",
 	})
 );
-app.get("/", () => {
-	return `<h1>hello</h1>`;
+app.get("/", (req, res) => {
+	res.send("<h1>Hello,Welcome to TweenLab</>");
 });
 app.use("/api", require("./route/auth"));
 app.use("/post", require("./route/post"));
 
-const PORT = 5000;
+if (process.env.NODE_ENV === "production") {
+	app.use(express.static("client/.next"));
+}
+const port = process.env.PORT || 4000;
 
-app.listen(PORT, () => console.log("server running on port 5000"));
+app.listen(port, () => console.log(`server running on port ${port}`));
