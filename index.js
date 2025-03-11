@@ -1,6 +1,6 @@
 const express = require("express");
+const mongoose = require("mongoose");
 const cors = require("cors");
-const { default: mongoose } = require("mongoose");
 const { urlencoded } = require("express");
 require("dotenv").config();
 const app = express();
@@ -22,8 +22,8 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 
-app.use("/api", require("./route/auth"));
-app.use("/post", require("./route/post"));
+app.use("/api", require("./routes/auth"));
+app.use("/post", require("./routes/post"));
 
 // if (process.env.NODE_ENV === "production") {
 // 	app.use(express.static("client/.next"));
