@@ -6,7 +6,9 @@ require("dotenv").config();
 const app = express();
 
 mongoose
-	.connect(process.env.URI)
+	.connect(
+		"mongodb+srv://alannpn75:alan@cluster0.xdtj2.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+	)
 	.then(() => console.log("Database connected"))
 	.catch((err) => console.log(err));
 
@@ -23,9 +25,9 @@ app.use(cors(corsOptions));
 app.use("/api", require("./route/auth"));
 app.use("/post", require("./route/post"));
 
-if (process.env.NODE_ENV === "production") {
-	app.use(express.static("client/.next"));
-}
+// if (process.env.NODE_ENV === "production") {
+// 	app.use(express.static("client/.next"));
+// }
 //
 const port = process.env.PORT || 4000;
 
