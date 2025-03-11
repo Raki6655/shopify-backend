@@ -20,7 +20,7 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 
-app.get("/", (req, res) => {
+app.use("/", (req, res) => {
 	res.send("<h1>Hello,Welcome Homee</>");
 });
 app.use("/api", require("./route/auth"));
